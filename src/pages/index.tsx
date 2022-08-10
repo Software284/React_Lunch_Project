@@ -17,62 +17,52 @@ const Home = (props: any) => {
   const [loading, setLoading] = useState(false);
   const [myActive, setMyActive] = useState(1);
 
-
-
-
-
   const formatData = (data: any) => {
-    
-    const comments: any = data[1];
-    const all_comments = [];
-    for (const key in comments) {
-      all_comments.push({
-        ...comments[key],
-      });
-    }
 
-    const displayCardData: any = {
-      veg_count: data[2].veg_count,
-      nonveg_count: data[2].nonveg_count,
-    };
+  const all_comments: any = data.comments;
+   
+  const displayCardData: any = {
+      veg_count: data.vegCount,
+      nonveg_count: data.nonVegCount,
+  };
 
-    const total_length = data[2].total_reviews;
+  const total_length = data.totalReviews;
 
-    const one_percentage = (data[2].oneRating / total_length) * 100;
-    const two_percentage = (data[2].twoRating / total_length) * 100;
-    const three_percentage = (data[2].threeRating / total_length) * 100;
-    const four_percentage = (data[2].fourRating / total_length) * 100;
-    const five_percentage = (data[2].fiveRating / total_length) * 100;
+  const one_percentage = (data.rating.oneRating / total_length) * 100;
+  const two_percentage = (data.rating.twoRating / total_length) * 100;
+  const three_percentage = (data.rating.threeRating / total_length) * 100;
+  const four_percentage = (data.rating.fourRating / total_length) * 100;
+  const five_percentage = (data.rating.fiveRating / total_length) * 100;
 
-    const ratingBreakDownData = [
+  const ratingBreakDownData = [
       {
         left: 5,
         middle: five_percentage,
-        right: data[2].oneRating,
+        right: data.rating.fiveRating,
       },
       {
         left: 4,
         middle: four_percentage,
-        right: data[2].twoRating,
+        right: data.rating.fourRating,
       },
       {
         left: 3,
         middle: three_percentage,
-        right: data[2].threeRating,
+        right: data.rating.threeRating,
       },
       {
         left: 2,
         middle: two_percentage,
-        right: data[2].fourRating,
+        right: data.rating.twoRating,
       },
-      { left: 1, middle: one_percentage, right: data[2].fiveRating },
+      { left: 1, middle: one_percentage, right: data.rating.oneRating },
     ];
 
-    const totalReviewData = { total_reviews: data[2].total_reviews };
-    const avatarData = { averageRating: data[2].averageRating };
+  const totalReviewData = { total_reviews: data.totalReviews };
+  const avatarData = { averageRating: data.averageRating };
  
 
-    return {
+  return {
       all_comments: all_comments,
       display_CardData: displayCardData,
       total_length: total_length,
@@ -82,9 +72,10 @@ const Home = (props: any) => {
     };
   };
 
+
   const all_datas = formatData(props.data);
 
-    const [allData, setAllData] = useState({
+  const [allData, setAllData] = useState({
     all_comments: all_datas.all_comments,
     display_CardData: all_datas.display_CardData,
     total_length: all_datas.total_length,
@@ -107,14 +98,8 @@ const Home = (props: any) => {
         setMyActive(1);
         setTodayDate(moment(new Date(data)).format("YYYY-MM-DD"));
 
-        const my_data = response.data;
-        const lunch = [];
-        for (const key in my_data) {
-          lunch.push({
-            ...my_data[key],
-          });
-        }
-        const all_datas = formatData(lunch);
+        const my_data = response.data.data;
+        const all_datas = formatData(my_data);
 
         setAllData({
           all_comments: all_datas.all_comments,
@@ -141,13 +126,7 @@ const Home = (props: any) => {
       .get(`https://lunch.pairlab.ai/api/ratings?date=${mydate}&page=${num}`)
       .then((response) => {
         setLoading(false);
-        const comments = response.data.data;
-        const my_comments: any = [];
-        for (const key in comments) {
-          my_comments.push({
-            ...comments[key],
-          });
-        }
+        const my_comments = response.data.data.comments;
         setAllData({ ...allData, all_comments: my_comments });
         setMyActive(num);
       })
@@ -215,11 +194,9 @@ export async function getStaticProps() {
   const launchData = await getLunchData();
   return {
     props: {
-      data: launchData,
+      data: launchData.data,
     },
     revalidate: 30,
   };
 }
-
-
 export default Home;

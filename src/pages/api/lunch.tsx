@@ -4,13 +4,5 @@ export async function getLunchData() {
   const response = await fetch(
     `https://lunch.pairlab.ai/api/ratings?date=${date}`
   );
-  const data = await response.json();
-
-  const lunch = [];
-  for (const key in data) {
-    lunch.push({
-      ...data[key],
-    });
-  }
-  return lunch;
+  return await response.json();
 }
