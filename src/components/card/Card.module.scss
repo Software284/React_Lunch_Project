@@ -1,0 +1,35 @@
+.card{
+
+    .itemInformation{
+
+        display:flex;
+        justify-content: space-between;
+        align-items: center;
+
+        h3{
+            margin:10px 0px;
+        }
+
+        h6{
+            margin-bottom:5px;
+            font-weight: 400;
+            font-size: 20px;
+            margin-left:20px;
+            line-height: 30px;
+        }
+
+        .right{
+            display:flex;
+            justify-content: flex-end;
+            align-items: center;
+
+            h6{
+                span{
+                    color:#CC9933;
+                }
+            }
+
+        }
+        
+    }
+}

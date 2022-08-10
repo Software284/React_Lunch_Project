@@ -1,0 +1,29 @@
+.singleFeedBack{
+    padding:20px 0px;
+    border-bottom:1px solid rgba(22, 25, 30, 0.2);;
+
+    h3{
+        font-style: normal;
+        font-weight: 500;
+        font-size: 20px;
+        margin:0;
+        // line-height: 30px;
+    }
+
+    .icons{
+        margin-bottom: 5px;
+    }
+
+    .checked{
+        color:orange;
+        font-size:15px;
+    }
+
+    .description{
+        color:#16191EC4;
+        font-weight: 400;
+        font-size:12px;
+        line-height: 16px;
+        
+    }
+}

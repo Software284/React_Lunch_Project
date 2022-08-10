@@ -1,0 +1,33 @@
+{
+  "name": "food_app",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
+  },
+  "dependencies": {
+    "@fortawesome/fontawesome-svg-core": "^6.1.2",
+    "@fortawesome/free-brands-svg-icons": "^6.1.2",
+    "@fortawesome/free-solid-svg-icons": "^6.1.2",
+    "@fortawesome/react-fontawesome": "^0.2.0",
+    "axios": "^0.27.2",
+    "moment": "^2.29.4",
+    "next": "12.2.3",
+    "react": "18.2.0",
+    "react-datepicker": "^4.8.0",
+    "react-dom": "18.2.0",
+    "sass": "^1.54.3"
+  },
+  "devDependencies": {
+    "@types/node": "18.6.3",
+    "@types/react": "^18.0.15",
+    "@types/react-datepicker": "^4.4.2",
+    "@types/react-dom": "18.0.6",
+    "eslint": "8.21.0",
+    "eslint-config-next": "12.2.3",
+    "typescript": "4.7.4"
+  }
+}

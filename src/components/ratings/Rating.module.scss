@@ -1,0 +1,17 @@
+.row{
+    display:flex;
+    font-size: 10px;
+    align-items: center;
+    .side{
+        width:3%;
+        text-align: center;
+    }
+    .middle{
+        float: left;
+        width: 94%;
+        
+    }
+    .right{
+        text-align: center;
+    }
+}

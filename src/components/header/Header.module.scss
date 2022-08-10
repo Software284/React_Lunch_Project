@@ -1,0 +1,32 @@
+.header{
+    margin-top: 50px;
+
+    p{
+        font-family: 'Poppins';
+        font-style: normal;
+        font-weight: 400;
+        font-size: 24px;
+        color: #000000;
+    }
+
+    .content{
+        .reviews{
+            font-family: 'Poppins';
+            font-style: normal;
+            font-weight: 400;
+            font-size: 15px;
+            color: rgba(0, 0, 0, 0.37);
+            margin-left: 10px;
+        }
+        .checked{
+            color: orange;
+            font-size:15px;
+        }
+
+        .unchecked{
+            color: #ccc;
+            font-size:15px;
+        }
+    }
+    
+}
