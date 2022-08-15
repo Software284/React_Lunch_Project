@@ -12,6 +12,7 @@ import { getLunchData } from 'pages/api/lunch';
 import moment from "moment";
 
 const Home = (props: any) => {
+  
   const date = moment(new Date()).format("YYYY-MM-DD");
   const [todayDate, setTodayDate] = useState(date);
   const [loading, setLoading] = useState(false);
@@ -84,7 +85,6 @@ const Home = (props: any) => {
     avatarData: all_datas.avatarData,
   });
 
-  
   const dateChangedHandler = (event: any) => {
     event.preventDefault();
 
@@ -116,7 +116,6 @@ const Home = (props: any) => {
         console.log(error);
       });
   };
-
 
   const paginateHandler = (event: any, num: any) => {
     event.preventDefault();

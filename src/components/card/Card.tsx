@@ -12,12 +12,12 @@ const Card = (props:any) => {
             onChange={(event) => props.onChanged(event)}
           />
           <div className={classes.right}>
-            <h6>
+            <p>
               Veg: <span>{props.extra.veg_count}</span>
-            </h6>
-            <h6>
+            </p>
+            <p>
               NonVeg: <span>{props.extra.nonveg_count}</span>
-            </h6>
+            </p>
           </div>
         </div>
       </div>

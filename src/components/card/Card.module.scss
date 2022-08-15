@@ -6,30 +6,46 @@
         justify-content: space-between;
         align-items: center;
 
-        h3{
-            margin:10px 0px;
-        }
-
-        h6{
-            margin-bottom:5px;
-            font-weight: 400;
-            font-size: 20px;
-            margin-left:20px;
-            line-height: 30px;
-        }
-
+        
         .right{
             display:flex;
             justify-content: flex-end;
             align-items: center;
 
-            h6{
+            p{
+            font-weight: 400;
+            font-size: inherit;
+            margin-right:20px;
                 span{
-                    color:#CC9933;
+                    color:orange;
                 }
             }
 
         }
         
     }
+}
+
+@media (max-width: 400px) {
+  .right {
+    p{
+        font-size: 15px !important;
+    }
+        
+  }
+}
+
+@media (max-width: 300px) {
+
+  .itemInformation{
+    input {
+      font-size: 10px;
+    }
+  }
+
+  .right {
+    p{
+        font-size: 10px !important;
+    }
+  }
 }
