@@ -36,7 +36,7 @@ input[type="date"]::-webkit-calendar-picker-indicator {
     color: #2c3e50;
 }
 
-/* A few custom styles for date inputs */
+/* A few custom styles for date input */
 input[type="date"] {
     appearance: none;
     -webkit-appearance: none;
